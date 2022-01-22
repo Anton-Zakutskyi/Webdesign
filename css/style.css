@@ -67,6 +67,14 @@ header nav ul.header_list {
 }
 header nav ul.header_list li {
   margin: 0 0 0 35px;
+  line-height: 100px;
+}
+header nav ul.header_list li:hover {
+  transition: 0.3s ease;
+  box-shadow: inset 0px 2px 0px 0px #4bcaff;
+}
+header nav ul.header_list li:hover a {
+  color: #4bcaff;
 }
 header nav ul.header_list li .header_link {
   font-size: 13px;
@@ -80,11 +88,87 @@ header .header_burger {
   display: none;
 }
 
+.owl-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+}
+
+.owl-carousel button.owl-dot {
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 12px;
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.owl-carousel button.owl-dot.active {
+  height: 15px;
+  width: 15px;
+  background-color: #4bcaff;
+  border: none;
+}
+
+.owl-carousel .owl-nav .owl-prev:before {
+  content: "\f053";
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  font-size: 16px;
+  color: #d5dade;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  z-index: 2;
+  position: absolute;
+  top: 47%;
+  left: 5%;
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  background-color: #204052;
+  border-radius: 50%;
+}
+.owl-carousel .owl-nav button.owl-prev:hover {
+  background-color: #4bcaff;
+}
+.owl-carousel .owl-nav button.owl-prev:hover .owl-carousel .owl-nav .owl-prev:before {
+  color: #435a66;
+}
+
+.owl-carousel .owl-nav .owl-next:before {
+  content: "\f054";
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  font-size: 16px;
+  color: #d5dade;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  z-index: 2;
+  position: absolute;
+  top: 47%;
+  right: 5%;
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  background-color: #204052;
+  border-radius: 50%;
+}
+.owl-carousel .owl-nav button.owl-next:hover {
+  background-color: #4bcaff;
+}
+.owl-carousel .owl-nav button.owl-next:hover .owl-carousel .owl-nav .owl-next:before {
+  color: #435a66;
+}
+
 .main_banner {
   padding: 350px 0 115px 0;
-  background-image: url("../images/main_banner_bg.jpg");
+  background-image: url("../images/main_banner_bg_test.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  border-bottom: 4px solid #4bcaff;
 }
 .main_banner .main_banner_container {
   max-width: 1270px;
@@ -92,10 +176,10 @@ header .header_burger {
   padding: 0 15px;
 }
 .main_banner .main_banner_content {
-  max-width: 745px;
-  padding-left: 55px;
+  max-width: 690px;
+  padding-left: 20px;
   margin-left: auto;
-  margin-right: 0;
+  margin-right: 50px;
 }
 .main_banner h1 {
   margin: 0 0 20px 0;
@@ -120,6 +204,15 @@ header .header_burger {
   max-width: 435px;
   justify-content: space-between;
 }
+.main_banner .main_banner_buttons .button:hover {
+  background-color: #4bcaff;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+.main_banner .main_banner_buttons .button:hover a {
+  border: 2px solid #4bcaff;
+  border-bottom: 2px solid #277697;
+}
 .main_banner .main_banner_buttons a {
   padding: 25px 48px;
   border: 2px solid white;
@@ -136,6 +229,9 @@ header .header_burger {
 .main_banner .main_banner_available p {
   margin: 0 20px 0 0;
 }
+.main_banner .main_banner_available .flex-item.icon:last-child a {
+  line-height: 55px;
+}
 .main_banner .main_banner_available .flex-item.icon a {
   display: inline-block;
   width: 50px;
@@ -151,10 +247,41 @@ header .header_burger {
 .main_banner .main_banner_available .flex-item.icon a:before:first-child {
   content: "\f179";
 }
-.main_banner .main_banner_available .flex-item.icon a:before:last-child {
-  content: "\f17b";
+.main_banner .main_banner_available .flex-item.icon a:hover {
+  color: #4bcaff;
+  transition: 0.3s ease-out;
 }
 
+svg.android {
+  fill: white;
+  transition: 0.3s ease-out;
+}
+svg.android:hover {
+  fill: #4bcaff;
+}
+
+@media only screen and (max-width: 1400px) {
+  .main_banner {
+    padding: 300px 0 100px 0;
+  }
+  .main_banner .main_banner_content {
+    max-width: 690px;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: 100px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .main_banner {
+    padding: 200px 0 70px 0;
+  }
+  .main_banner .main_banner_content {
+    max-width: 690px;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: 100px;
+  }
+}
 @media only screen and (max-width: 1024px) {
   header nav ul.header_list {
     position: relative;
@@ -162,6 +289,36 @@ header .header_burger {
   }
   header nav ul.header_list li {
     margin: 0 0 0 22px;
+  }
+  .main_banner {
+    padding: 120px 0 50px 0;
+  }
+  .main_banner .main_banner_buttons {
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
+  .main_banner .main_banner_available {
+    justify-content: flex-end;
+  }
+  .main_banner h1 {
+    margin: 0 0 20px 0;
+    font-size: 38px;
+  }
+  .main_banner .main_banner_content {
+    max-width: 690px;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: 100px;
+  }
+
+  .owl-carousel .owl-nav button.owl-next {
+    top: 53%;
+    right: 3%;
+  }
+
+  .owl-carousel .owl-nav button.owl-prev {
+    top: 53%;
+    right: 3%;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -172,8 +329,35 @@ header .header_burger {
   header nav ul.header_list li {
     margin: 0 0 0 15px;
   }
+
+  .main_banner {
+    padding: 100px 0 50px 0;
+  }
 }
 @media only screen and (max-width: 767px) {
+  .owl-nav {
+    display: none;
+  }
+
+  .main_banner {
+    padding: 62px 0 10px 0;
+  }
+  .main_banner h1 {
+    margin: 0 0 6px 0;
+    font-size: 29px;
+  }
+  .main_banner .main_banner_buttons a {
+    padding: 10px 30px;
+  }
+  .main_banner p {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .main_banner .main_banner_content {
+    margin-right: 0;
+  }
+
   body.lock {
     overflow: hidden;
   }
@@ -246,6 +430,7 @@ header .header_burger {
   }
   .header_menu ul.header_list li {
     margin: 0 0 30px 30px;
+    line-height: 36px;
   }
   .header_menu ul.header_list li .header_link {
     font-size: 22px;
@@ -254,6 +439,15 @@ header .header_burger {
   .header_menu.active {
     top: 0;
     transition: all 0.5s ease 0s;
+  }
+
+  header nav ul.header_list li:hover {
+    transition: 0.3s ease;
+    box-shadow: none;
+  }
+
+  .owl-dots {
+    display: none;
   }
 }
 
